@@ -1,9 +1,7 @@
-package amaral.pt.helpers;
+package amaral.pt.weather.helpers;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 
 public class DateUtils {
 

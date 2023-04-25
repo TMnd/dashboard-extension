@@ -1,10 +1,12 @@
 package amaral.pt.weather;
 
-import amaral.pt.helpers.DateUtils;
+import amaral.pt.generalhelper.JsonUtils;
+import amaral.pt.weather.helpers.DateUtils;
 import amaral.pt.weather.model.Forecast;
 import amaral.pt.weather.model.Result;
 import amaral.pt.weather.model.openmeteo.Weather;
 import amaral.pt.weather.model.openmeteo.WeatherCodeEnum;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -12,7 +14,6 @@ import org.jboss.logging.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -31,12 +32,6 @@ public class WeatherResource {
     @Inject
     @RestClient
     WeatherService weatherService;
-
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from RESTEasy Reactive";
-    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -86,20 +81,16 @@ public class WeatherResource {
                 forecastList
         );
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-
         try {
-            String jsonStr = mapper.writeValueAsString(result);
+            String watherData = JsonUtils.serialize(result);
 
-            logger.info("Weather Result: " + jsonStr);
+            logger.info("Weather Result: " + watherData);
 
-            return Response.ok(jsonStr).build();
-        }
-        catch (IOException e) {
+            return Response.ok(watherData).build();
+        } catch (IOException e) {
             logger.error(e.getMessage());
+
             return Response.status(500, e.getMessage()).build();
         }
-
     }
 }
