@@ -1,4 +1,4 @@
-package amaral.pt.weather.helpers;
+package amaral.pt.helpers;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

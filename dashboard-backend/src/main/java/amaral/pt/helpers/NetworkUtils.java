@@ -1,6 +1,5 @@
-package amaral.pt.homenetwork.helpers;
+package amaral.pt.helpers;
 
-import amaral.pt.homenetwork.HomenetworkResource;
 import org.jboss.logging.Logger;
 
 import java.net.InetAddress;

@@ -1,7 +1,7 @@
 package amaral.pt.homenetwork;
 
-import amaral.pt.generalhelper.JsonUtils;
-import amaral.pt.homenetwork.helpers.NetworkUtils;
+import amaral.pt.helpers.JsonUtils;
+import amaral.pt.helpers.NetworkUtils;
 import amaral.pt.homenetwork.model.NetworkMachine;
 import org.jboss.logging.Logger;
 
@@ -20,13 +20,17 @@ public class HomenetworkResource {
     private static final Logger logger = Logger.getLogger(HomenetworkResource.class);
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getHomenetworkInfo() {
 
         //GET IPS from databese
         List<String> networkMachineList = new ArrayList<>();
         networkMachineList.add("10.10.0.222"); //Exists
         networkMachineList.add("10.10.0.221"); //Does not exits
+
+        if(networkMachineList.isEmpty()) {
+            return Response.noContent().build();
+        }
 
         List<NetworkMachine> result = new ArrayList<>();
 

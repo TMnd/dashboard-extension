@@ -1,14 +1,11 @@
 package amaral.pt.weather;
 
-import amaral.pt.generalhelper.JsonUtils;
-import amaral.pt.weather.helpers.DateUtils;
+import amaral.pt.helpers.JsonUtils;
+import amaral.pt.helpers.DateUtils;
 import amaral.pt.weather.model.Forecast;
 import amaral.pt.weather.model.Result;
 import amaral.pt.weather.model.openmeteo.Weather;
 import amaral.pt.weather.model.openmeteo.WeatherCodeEnum;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
