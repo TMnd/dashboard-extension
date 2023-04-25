@@ -3,25 +3,36 @@ package amaral.pt.weather.model.openmeteo;
 public class Weather {
     private String latitude;
     private String longitude;
-    private Long generationtime_ms;
-    private Integer utc_offset_seconds;
+    private Long generationTimeMS;
+    private Integer utcOffsetSeconds;
     private String timezone;
-    private String timezone_abbreviation;
+    private String timezoneAbbreviation;
     private Integer elevation;
-    private CurrentWeather current_weather;
-    private DailyUnits daily_units;
+    private CurrentWeather currentWeather;
+    private DailyUnits dailyUnits;
     private Daily daily;
 
-    public Weather(String latitude, String longitude, Long generationtime_ms, Integer utc_offset_seconds, String timezone, String timezone_abbreviation, Integer elevation, CurrentWeather current_weather, DailyUnits daily_units, Daily daily) {
+    public Weather(
+            String latitude,
+            String longitude,
+            Long generationtime_ms,
+            Integer utc_offset_seconds,
+            String timezone,
+            String timezone_abbreviation,
+            Integer elevation,
+            CurrentWeather current_weather,
+            DailyUnits daily_units,
+            Daily daily)
+    {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.generationtime_ms = generationtime_ms;
-        this.utc_offset_seconds = utc_offset_seconds;
+        this.generationTimeMS = generationtime_ms;
+        this.utcOffsetSeconds = utc_offset_seconds;
         this.timezone = timezone;
-        this.timezone_abbreviation = timezone_abbreviation;
+        this.timezoneAbbreviation = timezone_abbreviation;
         this.elevation = elevation;
-        this.current_weather = current_weather;
-        this.daily_units = daily_units;
+        this.currentWeather = current_weather;
+        this.dailyUnits = daily_units;
         this.daily = daily;
     }
 
@@ -41,20 +52,20 @@ public class Weather {
         this.longitude = longitude;
     }
 
-    public Long getGenerationtime_ms() {
-        return generationtime_ms;
+    public Long getGenerationtimeMS() {
+        return generationTimeMS;
     }
 
-    public void setGenerationtime_ms(Long generationtime_ms) {
-        this.generationtime_ms = generationtime_ms;
+    public void setGenerationtimeMS(Long generationtime_ms) {
+        this.generationTimeMS = generationtime_ms;
     }
 
-    public Integer getUtc_offset_seconds() {
-        return utc_offset_seconds;
+    public Integer getUtcOffsetSeconds() {
+        return utcOffsetSeconds;
     }
 
-    public void setUtc_offset_seconds(Integer utc_offset_seconds) {
-        this.utc_offset_seconds = utc_offset_seconds;
+    public void setUtcOffsetSeconds(Integer utc_offset_seconds) {
+        this.utcOffsetSeconds = utc_offset_seconds;
     }
 
     public String getTimezone() {
@@ -65,12 +76,12 @@ public class Weather {
         this.timezone = timezone;
     }
 
-    public String getTimezone_abbreviation() {
-        return timezone_abbreviation;
+    public String getTimezoneAbbreviation() {
+        return timezoneAbbreviation;
     }
 
-    public void setTimezone_abbreviation(String timezone_abbreviation) {
-        this.timezone_abbreviation = timezone_abbreviation;
+    public void setTimezoneAbbreviation(String timezone_abbreviation) {
+        this.timezoneAbbreviation = timezone_abbreviation;
     }
 
     public Integer getElevation() {
@@ -81,20 +92,20 @@ public class Weather {
         this.elevation = elevation;
     }
 
-    public CurrentWeather getCurrent_weather() {
-        return current_weather;
+    public CurrentWeather getCurrentWeather() {
+        return currentWeather;
     }
 
-    public void setCurrent_weather(CurrentWeather current_weather) {
-        this.current_weather = current_weather;
+    public void setCurrentWeather(CurrentWeather currentWeather) {
+        this.currentWeather = currentWeather;
     }
 
-    public DailyUnits getDaily_units() {
-        return daily_units;
+    public DailyUnits getDailyUnits() {
+        return dailyUnits;
     }
 
-    public void setDaily_units(DailyUnits daily_units) {
-        this.daily_units = daily_units;
+    public void setDailyUnits(DailyUnits daily_units) {
+        this.dailyUnits = daily_units;
     }
 
     public Daily getDaily() {

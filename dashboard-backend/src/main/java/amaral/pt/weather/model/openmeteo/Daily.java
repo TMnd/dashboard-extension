@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Daily {
     private List<String> time;
-    private List<Integer> weathercode;
+    private List<Long> weathercode;
     private List<Integer> temperature_2m_max;
     private List<Integer> temperature_2m_min;
 
-    public Daily(List<String> time, List<Integer> weathercode, List<Integer> temperature_2m_max, List<Integer> temperature_2m_min) {
+    public Daily(List<String> time, List<Long> weathercode, List<Integer> temperature_2m_max, List<Integer> temperature_2m_min) {
         this.time = time;
         this.weathercode = weathercode;
         this.temperature_2m_max = temperature_2m_max;
@@ -23,11 +23,11 @@ public class Daily {
         this.time = time;
     }
 
-    public List<Integer> getWeathercode() {
+    public List<Long> getWeathercode() {
         return weathercode;
     }
 
-    public void setWeathercode(List<Integer> weathercode) {
+    public void setWeathercode(List<Long> weathercode) {
         this.weathercode = weathercode;
     }
 

@@ -6,18 +6,19 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
+import java.time.ZoneId;
 
 @Path("/v1")
 @RegisterRestClient
 public interface WeatherService {
     @GET
     @Path("/forecast")
-    Weather teste(
+    Weather getForecast(
             @QueryParam("latitude") Double latitude,
             @QueryParam("longitude") Double longitude,
             @QueryParam("current_weather") Boolean getCurretnWeather,
             @QueryParam("daily") String dailyInformationList,
-            @QueryParam("timezone") String timezone
+            @QueryParam("timezone") ZoneId timezone
             );
 
 //   {"temperature":8.4,"windspeed":13.1,"winddirection":254.0,"weathercode":2,"is_day":0,"time":"2023-04-24T23:00"}}

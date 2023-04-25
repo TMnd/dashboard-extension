@@ -6,16 +6,16 @@ public class CurrentWeather {
     private Double temperature;
     private Double windspeed;
     private Double windDirection;
-    private Double weathercode;
-    private Boolean is_day;
+    private Long weathercode;
+    private Boolean isDay;
     public String time;
 
-    public CurrentWeather(Double temperature, Double windspeed, Double windDirection, Double weathercode, Boolean is_day, String time) {
+    public CurrentWeather(Double temperature, Double windspeed, Double windDirection, Long weathercode, Boolean is_day, String time) {
         this.temperature = temperature;
         this.windspeed = windspeed;
         this.windDirection = windDirection;
         this.weathercode = weathercode;
-        this.is_day = is_day;
+        this.isDay = is_day;
         this.time = time;
     }
 
@@ -43,20 +43,20 @@ public class CurrentWeather {
         this.windDirection = windDirection;
     }
 
-    public Double getWeathercode() {
+    public Long getWeathercode() {
         return weathercode;
     }
 
-    public void setWeathercode(Double weathercode) {
+    public void setWeathercode(Long weathercode) {
         this.weathercode = weathercode;
     }
 
-    public Boolean getIs_day() {
-        return is_day;
+    public Boolean getIsDay() {
+        return isDay;
     }
 
-    public void setIs_day(Boolean is_day) {
-        this.is_day = is_day;
+    public void setIsDay(Boolean isDay) {
+        this.isDay = isDay;
     }
 
     public String getTime() {
