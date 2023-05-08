@@ -1,11 +1,11 @@
+const globalArea = document.querySelector(".header-time");
 const clockArea = document.querySelector(".header-clock");
 const dateArea = document.querySelector(".header-date");
 
 const clock = (date) => {
     let hour = date.getHours();
-    let minute = (date.getUTCMinutes().toString.length == 1) ? date.getUTCMinutes(): '0'+date.getUTCMinutes() ;
-    let seconds = date.getSeconds();
- 
+    let minute = (date.getUTCMinutes().toString().length === 1) ? '0'+date.getUTCMinutes() : date.getUTCMinutes();
+
     return `${hour}:${minute}`;
 }
 
@@ -20,11 +20,8 @@ const date = (date) => {
     return `${day} - ${month} - ${year}`;
 }
 
-
-window.onload = function() {
-    let clockTimeout = setInterval(() => {
-        clockArea.innerHTML = clock(new Date());
-        dateArea.innerHTML = date(new Date());
-        
-    }, 1000);
-}
+let clockTimeout = setInterval(() => {
+    clockArea.innerHTML = clock(new Date());
+    dateArea.innerHTML = date(new Date());
+    
+}, 1000);
