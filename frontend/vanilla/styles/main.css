@@ -1,0 +1,22 @@
+:root {
+    --default-back-ground-color: #627486;
+    --default-clock-color: #FFFFFF;
+}
+
+body{
+    background-color: var(--default-back-ground-color);
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.container>.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container>.column {
+    flex: 1;
+}
